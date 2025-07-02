@@ -794,12 +794,30 @@ document.addEventListener('DOMContentLoaded', function() {
   // Check if user has saved preference
   if (localStorage.getItem('theme') === 'dark') {
     document.body.classList.add('dark-mode');
-    toggleBtn.textContent = '☀️';
+    toggleBtn.textContent = '🌙';
   }
 
   toggleBtn.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
     const isDark = document.body.classList.contains('dark-mode');
-    toggleBtn.textContent = isDark ? '☀️' : '🌙';
+    toggleBtn.textContent = isDark ? '🌙' : '☀️';
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
   });
+
+
+   const topBtn = document.getElementById("topBtn");
+    window.onscroll = function() {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        topBtn.style.display = "block";
+      } else {
+        topBtn.style.display = "none";
+      }
+    };
+
+    // Jab button click ho to top par le jao
+    topBtn.addEventListener("click", function() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });

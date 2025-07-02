@@ -139,3 +139,36 @@ body.dark-mode {
   background-color: #121212;
   color: #ffffff;
 }
+#mode-toggle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+#mode-toggle:hover{
+    transform: scale(1.1);
+}
+#topBtn {
+      position: fixed;
+      bottom: 40px;
+      right: 40px;
+      z-index: 99;
+      border: none;
+      outline: none;
+      background-color: #9c1a1a;
+      color: white;
+      cursor: pointer;
+      padding: 1px 7px;
+      border-radius: 50%;
+      border : 1px solid #ffffff;
+      font-size: 18px;
+      display: none;
+      transition: opacity 0.3s;
+    }
+    #topBtn i{
+        font-size: 30px;
+    }
+    #topBtn:hover {
+      background-color: #555;
+    }
